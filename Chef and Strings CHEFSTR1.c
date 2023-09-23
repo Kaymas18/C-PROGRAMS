@@ -1,0 +1,34 @@
+#include<stdio.h>
+int main()
+{
+    int t,n,a[100],s=0,i,p=0,q=0;
+    scanf("%d",&t);
+    while(t>0)
+    {
+        scanf("%d",&n);
+        for(i=0;i<n;i++)
+        {
+            scanf("%d",&a[i]);
+        }
+        for(i=0;i<n;i++)
+        {
+            s=s+(a[i]-a[i+1]);
+            if(s>0)
+            {
+            	p=p+s-1;
+            	s=0;
+			}
+			else
+			{
+				s=-1*s;
+				q=q+s-1;
+				s=0;
+			}
+    	}	
+        printf("%d\n",p+q);
+        s=0;
+        p=0;
+        q=0;
+        t--;
+    }
+}

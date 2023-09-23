@@ -1,0 +1,67 @@
+#include<stdio.h>
+int main()
+{
+	int n=0,i=0,t=0,a[100],temp=0,q=0,m=-1,k,j,c=0,s=0,p=0,o=0;
+	scanf("%d",&t);
+	while(t>0)
+	{
+		scanf("%d",&n);
+		for(i=0;i<n;i++)
+		{
+			scanf("%d",&a[i]);
+		}
+		for(i=0;i<n;i++)
+		{
+			temp=a[i];
+			while(temp>0)
+			{
+				c++;
+				temp=temp/10;
+			}
+			temp=a[i];
+			p=a[i];
+			/*for(j=c-2;j>=0;j--)
+			{
+				for(k=0;k<=j;k++)
+				{
+					//temp=p;
+					temp=temp%10;
+					p=p/10;
+					q=p%10;
+					if(temp-q==1 || q-temp==1)
+					{
+						o++;
+					}
+				}
+			}*/
+			while(p>0)
+			{
+				temp=temp%10;
+				p=p/10;
+				q=p%10;
+				if(temp-q==1 || q-temp==1)
+					{
+						o++;
+					}
+				temp=p;
+			}
+		}
+		if(o==c)
+		{
+			printf("yES\n");
+		}
+		else
+		{
+			printf("No\n");
+		}
+		//s=0;
+		o=0;
+		n=0;
+		c=0;
+		temp=0;
+		p=0;
+		//m=-1;
+		q=0;
+		t--;
+	}
+}
